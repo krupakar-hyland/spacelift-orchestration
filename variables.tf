@@ -35,7 +35,7 @@ variable "spacelift_azure_branch" {
 }
 
 variable "opentofu_version" {
-  description = "OpenTofu version pinned on every created stack."
+  description = "OpenTofu version for the opentofu{} block on every stack."
   type        = string
   default     = "1.9.0"
 }

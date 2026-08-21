@@ -35,7 +35,9 @@ resource "spacelift_stack" "this" {
     "cloud:azure",
   ]
 
-  opentofu_version = var.opentofu_version
+  opentofu {
+    version = var.opentofu_version
+  }
 
   # No ARM_*, no ENVIRONMENT here. Both are supplied automatically by the
   # cloud:azure and env:<tier> contexts via label auto-attachment — that is
