@@ -34,8 +34,8 @@ variable "spacelift_azure_branch" {
   default     = "feature/multi-app-structure"
 }
 
-variable "terraform_version" {
-  description = "Terraform version pinned on every created stack."
+variable "opentofu_version" {
+  description = "OpenTofu version pinned on every created stack."
   type        = string
   default     = "1.9.0"
 }

@@ -23,9 +23,6 @@ locals {
 
 resource "spacelift_stack" "this" {
   for_each = local.stack_matrix
-  github_enterprise {
-    namespace = "krupakar-hyland" # The GitHub organization / user the repository belongs to
-  }
 
   name         = each.key # e.g. "storage-dev"
   repository   = var.spacelift_azure_repo
@@ -38,7 +35,7 @@ resource "spacelift_stack" "this" {
     "cloud:azure",
   ]
 
-  terraform_version = var.terraform_version
+  opentofu_version = var.opentofu_version
 
   # No ARM_*, no ENVIRONMENT here. Both are supplied automatically by the
   # cloud:azure and env:<tier> contexts via label auto-attachment — that is
