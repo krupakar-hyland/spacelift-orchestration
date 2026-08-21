@@ -34,8 +34,8 @@ variable "spacelift_azure_branch" {
   default     = "feature/multi-app-structure"
 }
 
-variable "opentofu_version" {
-  description = "OpenTofu version for the opentofu{} block on every stack."
+variable "terraform_version" {
+  description = "OpenTofu version to use (requires terraform_workflow_tool = OPEN_TOFU)."
   type        = string
   default     = "1.9.0"
 }

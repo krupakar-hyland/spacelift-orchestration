@@ -35,9 +35,8 @@ resource "spacelift_stack" "this" {
     "cloud:azure",
   ]
 
-  opentofu {
-    version = var.opentofu_version
-  }
+  terraform_version       = var.terraform_version
+  terraform_workflow_tool = "OPEN_TOFU"
 
   # No ARM_*, no ENVIRONMENT here. Both are supplied automatically by the
   # cloud:azure and env:<tier> contexts via label auto-attachment — that is
