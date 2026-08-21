@@ -6,7 +6,7 @@ terraform {
       version = "~> 1.0"
     }
     azurerm = {
-      source  = "hashicorp/azurerm"
+      source  = "opentofu/azurerm"
       version = "~> 4.0"
     }
   }
