@@ -24,7 +24,8 @@ locals {
 resource "spacelift_stack" "this" {
   for_each = local.stack_matrix
   github_enterprise {
-    namespace = "krupakar-hyland"
+    namespace = "spacelift-github-krupakar-hyland"
+    id = "spacelift-github-krupakar-hyland"
   }
   name         = each.key # e.g. "storage-dev"
   repository   = var.spacelift_azure_repo
