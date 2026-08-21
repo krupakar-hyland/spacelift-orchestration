@@ -1,0 +1,27 @@
+# Copy this file to terraform.tfvars and fill in real values.
+# DO NOT commit terraform.tfvars — it contains subscription IDs.
+#
+# client_id and tenant_id are no longer set here — identity.tf creates the
+# managed identities and derives the tenant automatically.
+
+# Using one subscription for everything today (see identity.tf comments on
+# why a per-tier identity is still created even when the subscription itself
+# is shared) — split these out once real per-tier subscriptions exist.
+environments = {
+  dev = {
+    subscription_id = "00000000-0000-0000-0000-000000000001"
+  }
+  staging = {
+    subscription_id = "00000000-0000-0000-0000-000000000001"
+  }
+  prod = {
+    subscription_id = "00000000-0000-0000-0000-000000000001"
+  }
+}
+
+spacelift_azure_repo      = "spacelift-azure"
+# Must be a branch that actually has the apps/ layout — main doesn't yet.
+spacelift_azure_branch    = "feature/multi-app-structure"
+spacelift_space_id        = "root"
+spacelift_hostname        = "moviepotter.app.spacelift.io"
+identity_location         = "eastus"
